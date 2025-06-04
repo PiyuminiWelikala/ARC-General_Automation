@@ -15,5 +15,24 @@ The application architecture consists of two main ETL processes: ETL2 and ETL3, 
 
 ![General Architecture](image.png)
 
+#### Overview of Architecture
 
-All work presented here was conducted as part of an applied research initiative at the Applied Research Centre of Langara College.
+As depicted in the General Architecture Diagram, the system follows a streamlined pipeline:
+
+1.	Raw Excel Inputs (from ETL1)
+The process begins with raw Excel files generated from lab instruments such as HPLC and GCMS. These files contain compound-level data for Alpha-Beta-Acid, Cannabis, and Terpenes. These files were processed and transformed to get reliable data through ETL1 process which becomes the input of our application.
+
+2.	ETL2 – Data Transformation
+ETL2 transforms the raw data through cleaning, normalization, and restructuring. Each data type is handled by a dedicated script, and all transformation logic is centralized in a shared function library to ensure consistency.
+
+3.	Structured Output Files
+The transformed data is saved as structured Excel files with standardized formats. These outputs serve as intermediaries between data preprocessing and database insertion.
+
+4.	ETL3 – Database Insertion & Update
+ETL3 reads the structured outputs and enriches them with additional metadata from supporting Excel files. It then inserts or updates records across various dimension tables including samples, chemical components, instruments, procedures, batches, and SOPs.
+
+5.	PostgreSQL Database Storage
+The final, validated data is stored in a PostgreSQL database. This centralized storage enables future data analysis, reporting, and traceability across the organization.
+
+
+**All work presented here was conducted as part of an applied research initiative at the Applied Research Centre of Langara College.**

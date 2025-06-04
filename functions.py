@@ -464,11 +464,11 @@ def process_terpens_files(input_terpenes_folder, output_terpenes_folder):
 
 # Database connection configuration
 DB_CONFIG = {
-    "dbname": "ARC_ETL",
-    "user": "postgres",
-    "password": "1234",
+    "dbname": "******",
+    "user": "****",
+    "password": "****",
     "host": "localhost",
-    "port": "5433"
+    "port": "****"
 }
 
 def clean_column_name(name):
