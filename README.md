@@ -34,5 +34,10 @@ ETL3 reads the structured outputs and enriches them with additional metadata fro
 5.	PostgreSQL Database Storage
 The final, validated data is stored in a PostgreSQL database. This centralized storage enables future data analysis, reporting, and traceability across the organization.
 
+##### Context of individual python script
+
+* alpha-beta-acid.py, cannabis.py, terpenes.py - Main App for ETL2
+* etl3_app.py - Main App for ETL3
+* functions.py - All the functionalities
 
 **All work presented here was conducted as part of an applied research initiative at the Applied Research Centre of Langara College.**
